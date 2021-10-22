@@ -7,16 +7,17 @@ const checkJwt = (req, res, next) => {
     if (!token) {
       return res.status(401).json({
         ok: false,
-        msg: 'Token no enviado'
+        msg: 'Invalid token 1'
       })
     }
 
     const { uid } = jwt.verify(token, process.env.JWT_KEY)
+  
     req.uid = uid
   } catch (e) {
     return res.status(401).json({
       ok: false,
-      msg: 'Invalid token'
+      msg: 'Invalid token 2'
     })
   }
 
