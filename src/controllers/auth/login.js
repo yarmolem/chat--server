@@ -1,7 +1,7 @@
 const bcrypt = require('bcryptjs')
 const { response } = require('express')
 const User = require('../../models/user')
-const genJWT = require('../../utils/jwt')
+const { genJWT } = require('../../utils/jwt')
 
 const login = async (req, res = response) => {
   const { email, password } = req.body

@@ -1,6 +1,6 @@
 const { response } = require('express')
 const User = require('../../models/user')
-const genJWT = require('../../utils/jwt')
+const { genJWT } = require('../../utils/jwt')
 
 const renew = async (req, res = response) => {
   const { uid } = req
