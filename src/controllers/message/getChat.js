@@ -1,6 +1,6 @@
 const { Types } = require('mongoose')
 const { response, request } = require('express')
-const Message = require('../../models/mensaje')
+const Message = require('../../models/message')
 
 const getChat = async (req = request, res = response) => {
   const fromID = req.uid
@@ -21,7 +21,7 @@ const getChat = async (req = request, res = response) => {
       ]
     })
       .limit(30)
-      .sort({ createdAt: 'desc' })
+      .sort({ createdAt: 'asc' })
 
     return res.status(200).json({ ok: true, messages: last30 })
   } catch (error) {

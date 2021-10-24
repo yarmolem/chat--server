@@ -31,6 +31,7 @@ class Server {
 
     // Routers
     this.app.use('/api/auth', require('../router/auth'))
+    this.app.use('/api/users', require('../router/users'))
     this.app.use('/api/messages', require('../router/messages'))
   }
 

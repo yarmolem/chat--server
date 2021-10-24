@@ -1,18 +1,18 @@
 const { Schema, model } = require('mongoose')
 
-const MensajeSchema = Schema(
+const MessageSchema = Schema(
   {
     from: {
-      ref: 'Usuario',
+      ref: 'User',
       required: true,
       type: Schema.Types.ObjectId
     },
     to: {
-      ref: 'Usuario',
+      ref: 'User',
       required: true,
       type: Schema.Types.ObjectId
     },
-    mensaje: {
+    message: {
       type: String,
       required: true
     }
@@ -20,9 +20,9 @@ const MensajeSchema = Schema(
   { timestamps: true }
 )
 
-MensajeSchema.method('toJSON', function () {
+MessageSchema.method('toJSON', function () {
   const { __v, ...mensaje } = this.toObject()
   return mensaje
 })
 
-module.exports = model('Mensaje', MensajeSchema)
+module.exports = model('Message', MessageSchema)
