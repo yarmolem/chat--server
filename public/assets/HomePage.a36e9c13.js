@@ -1,0 +1,1 @@
+import{a as e,C as r,j as t,b as a,m as n,T as s}from"./vendor.df888f48.js";const o=()=>e(r,{h:"full",children:t(a,{bg:"primary.500",px:5,py:3,rounded:"2xl",color:"gray.800",children:[e(n,{textAlign:"center",mb:1,children:"Welcome"}),e(s,{textAlign:"center",children:"Select a chat to start messaging"})]})});export{o as default};

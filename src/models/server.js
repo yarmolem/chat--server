@@ -4,6 +4,7 @@ const express = require('express')
 const socketio = require('socket.io')
 const Sockets = require('./sockets')
 const dbConnection = require('../db/config')
+const path = require('path')
 
 class Server {
   constructor() {
@@ -28,6 +29,9 @@ class Server {
 
     // ToJSON
     this.app.use(express.json())
+
+    // public
+    this.app.use(express.static(path.resolve(__dirname, '../../public')))
 
     // Routers
     this.app.use('/api/auth', require('../router/auth'))
