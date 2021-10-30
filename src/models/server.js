@@ -30,13 +30,17 @@ class Server {
     // ToJSON
     this.app.use(express.json())
 
-    // public
-    this.app.use(express.static(path.resolve(__dirname, '../../public')))
-
     // Routers
     this.app.use('/api/auth', require('../router/auth'))
     this.app.use('/api/users', require('../router/users'))
     this.app.use('/api/messages', require('../router/messages'))
+
+    // Public
+    this.app.use(express.static(path.resolve(__dirname, '../../public')))
+
+    this.app.get('*', (req, res) => {
+      res.redirect('/')
+    })
   }
 
   start() {
