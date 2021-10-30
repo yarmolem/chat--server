@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const checkJwt = require('../middleware/checkJWT')
+const checkJwt = require('../middleware/checkJwt')
 const { getChat } = require('../controllers/message')
 
 const router = Router()
