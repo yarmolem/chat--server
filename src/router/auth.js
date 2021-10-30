@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const checkJwt = require('../middleware/checkJWT')
+const checkJwt = require('../middleware/checkJwt')
 const loginSchema = require('../validator/loginSchema')
 const registerSchema = require('../validator/registerSchema')
 const { login, register, renew } = require('../controllers/auth')
