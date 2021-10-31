@@ -35,11 +35,12 @@ class Server {
     this.app.use('/api/users', require('../router/users'))
     this.app.use('/api/messages', require('../router/messages'))
 
-    // Public
+    // Statics
     this.app.use(express.static(path.resolve(__dirname, '../../public')))
 
+    // Public
     this.app.get('*', (req, res) => {
-      res.redirect('/')
+      res.sendFile(path.join(__dirname, '../../public/index.html'))
     })
   }
 
